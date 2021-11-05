@@ -223,11 +223,12 @@ class CarInterface(CarInterfaceBase):
       ret.mass = 4068. * CV.LB_TO_KG + STD_CARGO_KG
       ret.wheelbase = 2.75
       ret.centerToFront = ret.wheelbase * 0.41
-      ret.steerRatio = 16.0 #11.95 is spec
+      ret.steerRatio = 11.95 #11.95 is spec
       ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 3840], [0, 3840]]
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.4], [0.12]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.16], [0.0]]
       tire_stiffness_factor = 0.8
       ret.lateralTuning.pid.kf = 0.00007818594
+      ret.lateralTuning.pid.kdV = 0.8
 
     elif candidate == CAR.ODYSSEY:
       stop_and_go = False
